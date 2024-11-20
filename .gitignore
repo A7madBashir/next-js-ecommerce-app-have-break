@@ -38,6 +38,8 @@ next-env.d.ts
 
 # uploads folder
 /public/uploads
+/tmp
 
 # vs code folder
 /.vscode
+

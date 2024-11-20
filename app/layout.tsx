@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site";
 import { ReactQueryProvider } from "@/providers/ReactQueryProvider";
 import { ToastProvider } from "@/providers/toast-provider";
 import { ClerkProvider } from "@clerk/nextjs";
+import logo from "@/public/logo.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,8 +15,8 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   icons: [
     {
-      url: "/logo.png",
-      href: "/logo.png",
+      url: logo.src,
+      href: logo.src,
     },
   ],
 };

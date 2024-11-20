@@ -1,6 +1,7 @@
 import { mkdir, stat, writeFile } from "fs/promises";
 import { join } from "path";
 import mime from "mime";
+import os from "os";
 
 export async function saveImageToUploadsFolder({
   buffer,
@@ -16,7 +17,8 @@ export async function saveImageToUploadsFolder({
       year: "numeric",
     })
     .replace(/\//g, "-")}`;
-  const uploadDir = join(process.cwd(), "public", relativeUploadDir);
+
+  const uploadDir = join(process.cwd(), os.tmpdir(), relativeUploadDir);
   try {
     await stat(uploadDir);
   } catch (e: any) {
